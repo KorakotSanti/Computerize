@@ -8,6 +8,7 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
+  border: solid black 1px;
   &:hover {
     .image {
       opacity: 0.8;
@@ -29,9 +30,10 @@ export const AddButton = styled(CustomButton)`
 
 export const BackgroundImage = styled.div`
   width: 100%;
-  height: 95%;
-  background-size: cover;
+  height: 92%;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   margin-bottom: 5px;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `;
@@ -40,16 +42,16 @@ export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: 18px;
 `;
 
 export const NameContainer = styled.span`
-  width: 70%;
+  width: 40%;
   margin-bottom: 15px;
 `;
 
 export const PriceContainer = styled.span`
-  width: 30%;
+  width: 40%;
   text-align: right;
 `;

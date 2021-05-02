@@ -9,23 +9,23 @@ import {
   AddButton,
   BackgroundImage,
   NameContainer,
-  PriceContainer
-} from './collection-item.styles';
+  PriceContainer,
+} from "./collection-item.styles";
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
 
   return (
     <CollectionItemContainer>
-      <BackgroundImage
-        className="image"
-        imageUrl={imageUrl}
-      />
+      <BackgroundImage className="image" imageUrl={imageUrl} />
       <CollectionFooterContainer>
         <NameContainer>{name}</NameContainer>
-        <PriceContainer>{price}</PriceContainer>
+        <PriceContainer>${price.toFixed(2)}</PriceContainer>
       </CollectionFooterContainer>
-      <AddButton onClick={() => addItem(item)} inverted> Add to cart </AddButton>
+      <AddButton onClick={() => addItem(item)} inverted>
+        {" "}
+        Add to cart{" "}
+      </AddButton>
     </CollectionItemContainer>
   );
 };

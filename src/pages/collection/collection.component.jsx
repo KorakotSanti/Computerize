@@ -13,7 +13,7 @@ import {
 
 const CollectionPage = ({ collection }) => {
   const { title, items } = collection;
-
+  console.log("CollectionPage");
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>
@@ -26,8 +26,13 @@ const CollectionPage = ({ collection }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  collection: selectCollection(ownProps.match.params.collectionId)(state),
-});
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps);
+  return {
+    collection: selectCollection(
+      ownProps.match.params.collectionId.replaceAll("_", " ")
+    )(state),
+  };
+};
 
 export default connect(mapStateToProps)(CollectionPage);

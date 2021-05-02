@@ -13,8 +13,6 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 
-import SHOP_DATA from "./firebase/shop.data";
-
 class App extends React.Component {
   constructor() {
     super();
@@ -29,8 +27,8 @@ class App extends React.Component {
   componentDidMount() {
     const { setCurrentUser } = this.props;
 
-    const computerarray = Object.keys(SHOP_DATA).map((key) => SHOP_DATA[key]);
-    console.log(computerarray);
+    // const computerarray = Object.keys(SHOP_DATA).map((key) => SHOP_DATA[key]);
+    // console.log(computerarray);
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -45,6 +43,10 @@ class App extends React.Component {
       }
 
       setCurrentUser(userAuth);
+      // addCollectionAndDocuments(
+      //   "computers",
+      //   computerarray.map(({ title, items }) => ({ title, items }))
+      // );
     });
   }
 

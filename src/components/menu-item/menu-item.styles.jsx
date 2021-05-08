@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MenuItemContainer = styled.div`
-  height: ${({ size }) => (size ? '380px' : '240px')};
+  /* height: ${({ size }) => (size ? "380px" : "240px")}; */
+  height: 80vh;
   min-width: 30%;
   overflow: hidden;
   flex: 1 1 auto;

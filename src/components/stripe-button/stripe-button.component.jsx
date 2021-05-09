@@ -1,17 +1,21 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
-import dotenv from 'dotenv';
+import { connect } from "react-redux";
+
+import dotenv from "dotenv";
+
+import { clearAllFromCart } from "../../redux/cart/cart.actions";
 dotenv.config();
 
-const StripeCheckoutButton = ({ price }) => {
+const StripeCheckoutButton = ({ price, clearCart }) => {
   const priceForStripe = price * 100;
   const publishableKey = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
 
-  const onToken = token => {
-    console.log(token);
-    alert('Payment Successful');
-  }
-  
+  const onToken = (token) => {
+    clearCart();
+    alert(<h1>Payment Successful</h1>);
+  };
+
   return (
     <StripeCheckout
       label="Pay Now"
@@ -27,4 +31,8 @@ const StripeCheckoutButton = ({ price }) => {
   );
 };
 
-export default StripeCheckoutButton;
+const mapDispatchToProps = (dispatch) => ({
+  clearCart: () => dispatch(clearAllFromCart()),
+});
+
+export default connect(null, mapDispatchToProps)(StripeCheckoutButton);

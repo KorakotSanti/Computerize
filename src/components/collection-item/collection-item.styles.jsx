@@ -8,7 +8,7 @@ export const CollectionItemContainer = styled.div`
   height: 350px;
   align-items: center;
   position: relative;
-  border: solid black 1px;
+  border: solid #f3e9e9 1px;
   &:hover {
     .image {
       opacity: 0.8;
@@ -42,16 +42,17 @@ export const CollectionFooterContainer = styled.div`
   width: 100%;
   height: 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
   font-size: 18px;
+  padding: 18px 0;
 `;
 
 export const NameContainer = styled.span`
-  width: 40%;
-  margin-bottom: 15px;
+  width: 100%;
 `;
 
 export const PriceContainer = styled.span`
-  width: 40%;
-  text-align: right;
+  width: 100%;
 `;

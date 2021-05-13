@@ -12,9 +12,9 @@ import {
   PriceContainer,
 } from "./collection-item.styles";
 
-const CollectionItem = ({ item, addItem }) => {
+const CollectionItem = ({ item, addItem, routeName }) => {
   const { name, price, imageUrl } = item;
-
+  console.log(routeName);
   return (
     <CollectionItemContainer>
       <BackgroundImage className="image" imageUrl={imageUrl} />

@@ -26,6 +26,7 @@ export const AddButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+  font: 18px;
 `;
 
 export const BackgroundImage = styled.div`

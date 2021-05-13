@@ -27,6 +27,7 @@ export const fetchCollectionsStartAsync = () => {
       .get()
       .then((snapshot) => {
         const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+        console.log("redux boop");
         console.log(collectionsMap);
         dispatch(fetchCollectionsSuccess(collectionsMap));
       })

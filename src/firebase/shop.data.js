@@ -12,6 +12,7 @@ const SHOP_DATA = {
         price: 12,
         infoUrl:
           "https://pcpartpicker.com/product/wWsKHx/intel-cpu-eu80571ph0673m",
+        part: "cpu",
       },
       {
         id: 2,

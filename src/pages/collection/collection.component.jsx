@@ -13,13 +13,14 @@ import {
 
 const CollectionPage = ({ collection }) => {
   const { title, items } = collection;
+  console.log(items);
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>
       <CollectionItemsContainer>
-        {items.map((item) => (
-          <CollectionItem key={item.id} item={item} />
-        ))}
+        {Object.keys(items).map((key) => {
+          return <CollectionItem key={key} item={items[key]} />;
+        })}
       </CollectionItemsContainer>
     </CollectionPageContainer>
   );

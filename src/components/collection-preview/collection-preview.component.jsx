@@ -18,11 +18,17 @@ const CollectionPreview = ({ title, items, history, match, routeName }) => {
         {title.toUpperCase()}
       </TitleContainer>
       <PreviewContainer>
-        {items
-          .filter((item, idx) => idx < 4)
-          .map((item) => (
-            <CollectionItem key={item.id} item={item} routeName={routeName} />
-          ))}
+        {Object.keys(items)
+          .filter((key, idx) => idx < 4)
+          .map((key) => {
+            return (
+              <CollectionItem
+                key={key}
+                item={items[key]}
+                routeName={routeName}
+              />
+            );
+          })}
       </PreviewContainer>
     </CollectionPreviewContainer>
   );
